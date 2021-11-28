@@ -9,7 +9,7 @@
 // Event handling, user interaction is what starts the code execution.
 
 var taskInput=document.querySelector(".text_new");//Add a new task.
-console.log(taskInput.value)
+// console.log(taskInput.value)
 var addButton=document.getElementsByTagName("button")[0];//first button
 var incompleteTaskHolder=document.querySelector(".task-list_now");//ul of #incompleteTasks
 var completedTasksHolder=document.querySelector(".task-list_completed");//completed-tasks
@@ -38,7 +38,7 @@ var createNewTaskElement=function(taskString){
 
     label.innerText=taskString;
     label.className='task__deal deal';
-    console.log(label)
+    // console.log(label)
 
     //Each elements, needs appending
     checkBox.type="checkbox";
@@ -70,7 +70,7 @@ var createNewTaskElement=function(taskString){
 
 
 var addTask=function(){
-    console.log("Add Task...");
+    // console.log("Add Task...");
     //Create a new list item with the text from the #new-task:
     if (!taskInput.value) return;
     var listItem=createNewTaskElement(taskInput.value);
@@ -87,8 +87,8 @@ var addTask=function(){
 //Edit an existing task.
 
 var editTask=function(){
-    console.log("Edit Task...");
-    console.log("Change 'edit' to 'save'");
+    // console.log("Edit Task...");
+    // console.log("Change 'edit' to 'save'");
 
 
     var listItem=this.parentNode;
@@ -98,9 +98,9 @@ var editTask=function(){
     var editInput=listItem.querySelector('input[type=text]');
     var editBtn=listItem.querySelector(".button");
     var containsClass=listItem.classList.contains("task_edit");
-    console.log(label)
-    console.log(editInput)
-    console.log(editBtn)
+    // console.log(label)
+    // console.log(editInput)
+    // console.log(editBtn)
 
     //If class of the parent is .editmode
     if(containsClass){
@@ -123,7 +123,7 @@ var editTask=function(){
 
 //Delete task.
 var deleteTask=function(){
-    console.log("Delete Task...");
+    // console.log("Delete Task...");
 
     var listItem=this.parentNode;
     var ul=listItem.parentNode;
@@ -135,12 +135,12 @@ var deleteTask=function(){
 
 //Mark task completed
 var taskCompleted=function(){
-    console.log("Complete Task...");
+    // console.log("Complete Task...");
 
     //Append the task list item to the #completed-tasks
     var listItem=this.parentNode;
     
-    console.log(listItem)
+    // console.log(listItem)
     listItem.querySelector(".deal").classList.add("deal_completed")
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
@@ -149,7 +149,7 @@ var taskCompleted=function(){
 
 
 var taskIncomplete=function(){
-    console.log("Incomplete Task...");
+    // console.log("Incomplete Task...");
 //Mark task as incomplete.
     //When the checkbox is unchecked
     //Append the task list item to the #incompleteTasks.
@@ -162,7 +162,7 @@ var taskIncomplete=function(){
 
 
 var ajaxRequest=function(){
-    console.log("AJAX Request");
+    // console.log("AJAX Request");
 }
 
 //The glue to hold it all together.
@@ -175,7 +175,7 @@ addButton.addEventListener("click",ajaxRequest);
 
 
 var bindTaskEvents=function(taskListItem,checkBoxEventHandler){
-    console.log("bind list item events");
+    // console.log("bind list item events");
 //select ListItems children
     var checkBox=taskListItem.querySelector(".checkbox");
     var editButton=taskListItem.querySelector("button.button");
@@ -215,3 +215,6 @@ for (var i=0; i<completedTasksHolder.children.length;i++){
 //prevent creation of empty tasks.
 
 //Change edit to save when you are in edit mode.
+
+
+console.log('Самооценка - 45 баллов\nОтзыв по пунктам ТЗ:\nВыполненные пункты:\n1) Правило 1.1 Отступы из html-and-css выполняется во всем проекте: табуляция не используется, все отступы выполнены пробельным символом\n2) Правило 1.2 Нижний регистр написания из html-and-css выполняется во всем проекте: все HTML теги, атрибуты из значения, селекторы и их значения записаны в нижнем регистре\n3) Правило 1.3 Кавычки в HTML/CSS документе из html-and-css выполняется во всем проекте: в HTML и СSS файлах используются только двойные кавычки\n4) Правило 2.1 Форматирование из html-and-css выполняется во всем проекте: все блочные, табличные и списочные элементы перенесены на отдельную строку и выделены отступами в соответствии с лестничной иерархией вложенности.\n5) Правило 2.2 Тип документа / Document Type из html-and-css выполняется во всем проекте: doctype присутствует первым тегом в html документе и соответствует типу html5\n6) Правило 2.3 Символы-мнемоники из html-and-css выполняется во всем проекте: символы-мнемоники не используются в html файлах\n7) Правило 2.4 Атрибут из html-and-css выполняется во всем проекте: CSS-стили и JS-скрипты подключены без использования данного атрибута\n8) Правило 3.1 Единый стиль именования селекторов (классов / id) из html-and-css выполняется во всем проекте: все селекторы именованы в едином стиле, при этом или в соответствии с БЭМ, или все слова в нижнем регистре и разделены между собой дефисом\n9) Правило 3.2 Значимые названия идентификаторов и классов из html-and-css выполняется во всем проекте: все имена классов и идентификаторов имеют или осмысленные имена в соответствии с их функциональным значением (!но НЕ ВНЕШНИМ ВИДОМ!), или шаблонное имя (также соответствующее назначению элемента)\n10) Правило 3.3 Лаконичность названий идентификаторов и классов из html-and-css выполняется во всем проекте: все имена id и классов понятны, достаточно длинные для понимания их назначения и при этом лаконичны\n11) Правило 3.4 Теговые селекторы из html-and-css выполняется во всем проекте: теговые селекторы не используются (за исключением намеренного сброса дефолтных стилей)\n12) Правило 3.5 Отступы в блоках из html-and-css выполняется во всем проекте: содержимое всех блоков отделены отступами\n13) Правило 3.6 Пробел после названий свойств из html-and-css выполняется во всем проекте: значения CSS-свойств отделены пробелами после двоеточия\n14) Правило 3.7 Точка с запятой после свойств из html-and-css выполняется во всем проекте: после каждого CSS-правила стоит точка с запятой\n15) Правило 3.8 Разделение селекторов и свойств из html-and-css выполняется во всем проекте: каждый селектор в групповом перечислении CSS-блока отделен переносом строки\n16) Правило 1.1 Семантика из html-and-css-extended соблюдено: все html-теги используются в соответствии с их назначением. При этом использование div-элементов сведено к минимуму, где возможно они заменены на семантические html5 элементы\n17) Правило 1.2 Альтернатива для мультимедиа из html-and-css-extended соблюдено: каждый мультимедиа элемент (в данном задании img) имеет alt-атрибут с осмысленным содержанием, соответствующим контенту элементы. При этом чисто декоративные картинки имеют alt с пустым значением.\n18) Правило 2.1 БЭМ из html-and-css-extended соблюдено: все классы именованы согласно БЭМ нотации\nP.S. Правило 2.1 БЭМ, 3.1 Единый стиль именования селекторов (классов / id), 3.2 Значимые названия идентификаторов и классов, 3.3 Лаконичность названий идентификаторов и классов, 3.4 Теговые селекторы перекрывают друг друга, оформлены одним коммитом.')
